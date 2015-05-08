@@ -1,0 +1,7 @@
+.login_body{background:url(../images/bg_tile.jpg) repeat;  margin:0 0 0 0;}
+#main_container1{
+margin:30px auto 10px auto;
+width:500px;
+overflow: hidden;
+}
+.merci{font-size:31px; font-weight:bold; color:#fff; text-shadow:#000; text-align:center;padding-top:40%;}

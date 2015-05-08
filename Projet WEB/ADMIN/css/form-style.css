@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+body{ background:#c1c1c1;
+text-align:left;}
+.logo{
+padding:35px 0 0 0;
+}
+.login form{
+	background:url(../images/login_bg.png) no-repeat;
+	width:412px;
+	height:263px;
+	margin:50px 0 0 500px;
+	text-align:left;
+}
+.input_1{font-weight:200;font-size:24px;line-height:1;text-align:right;width:200px;padding:3px;margin-top:90px;margin-left:20px;margin-bottom:16px;border:1px solid #e5e5e5;background:#dadada;outline:none;float:right;
+}
+.input_2{font-weight:200;font-size:24px;line-height:1;text-align:right;width:200px;padding:3px;margin-top:18px;margin-left:20px;margin-bottom:16px;border:1px solid #e5e5e5;background:#dadada;outline:none;float:right;
+}
+.butt_log{
+	background:url(../images/connexion_butt.png) no-repeat;
+	margin:80px 10px 10px -200px;
+	font-size:20px;
+	text-align:center;
+	color:#fff;
+	width:120px;
+	height:40px;
+	border:0;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.butt_log:hover{ background:url(../images/connexion_butt-hover.png); width:120px; height:40px; cursor:pointer;
+}
+.inscri-form{
+	margin:50px 0 0 500px;
+	font-size:18px;
+}
+.butt_inscri{
+	background:url(../images/connexion_butt.png) no-repeat;
+	margin:10px 10px 10px 10px;
+	font-size:20px;
+	text-align:center;
+	color:#fff;
+	width:120px;
+	height:40px;
+	border:0;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.butt_inscri:hover{ background:url(../images/connexion_butt-hover.png); width:120px; height:40px; cursor:pointer;
+}
+.input_inscri{
+	font-weight:200;font-size:24px;line-height:1;text-align:right;width:200px;padding:3px;margin-top:18px;margin-left:20px;border:1px solid #e5e5e5;background:#dadada;outline:none;
+}
+.input_inscri:focus{
+  -webkit-box-shadow: 0px 0px 4px rgba(0,114,255,1.2);
+  -moz-box-shadow: 0px 0px 4px rgba(0,114,255,1.2);
+  box-shadow: 0px 0px 4px rgba(0,114,255,1.2);
+  border-color: #0072ff;
+}
+.input_inscri_faute{
+  -webkit-box-shadow: 0px 0px 4px rgba(0,114,255,1.2);
+  -moz-box-shadow: 0px 0px 4px rgba(0,114,255,1.2);
+  box-shadow: 0px 0px 4px rgba(0,114,255,1.2);
+  border-color: #0072ff;
+}
+.text_inscrit{padding:20px 0 0 20px;}
