@@ -71,10 +71,10 @@ if(isset($_GET['idp']))
 					<ul class="products">
 						
                         <?php
-
+$id=$_GET['id'];
 $c=mysql_connect("localhost","root","") or die("erreur de connexion");
 $base=mysql_select_db("projet_web") or die ("base non trouve");
-$r=mysql_query("select * from produit");
+$r=mysql_query("select * from produit WHERE refmagasin=$id");
 
 while ($ligne=mysql_fetch_array($r))
     {   if($ligne['sale']>0)

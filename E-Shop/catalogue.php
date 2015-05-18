@@ -68,7 +68,7 @@ $r=mysql_query("select * from catalogue");
 while ($ligne=mysql_fetch_array($r))
     {   
         echo"<li class='product dmflip'>
-    <a class='hov' href='shops.php?$ligne[refproduit]'>
+    <a class='hov' href='shops.php?id=$ligne[refproduit]'>
         <img width='600' src=$ligne[image] class='' alt='' />
         <div class='zoom'></div>
     </a>
@@ -84,7 +84,7 @@ while ($ligne=mysql_fetch_array($r))
         </span>
     </div><!-- /.details -->
 
-    <a href='shops.php?$ligne[refproduit]' rel='nofollow' class='button'>Visit Shop</a>
+    <a href='shops.php?id=$ligne[refproduit]' rel='nofollow' class='button'>Visit Shop</a>
 </li>";
 }
 
