@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 17, 2015 at 11:19 AM
+-- Generation Time: May 18, 2015 at 10:19 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -27,12 +27,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `admin` (
-  `idadmin` int(8) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(10) NOT NULL,
-  `prenom` varchar(10) NOT NULL,
-  `mail` varchar(10) NOT NULL,
-  PRIMARY KEY (`idadmin`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `username` varchar(10) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`, `mail`) VALUES
+(1, 'nadhem', 'nadhem', 'nadhem@ish');
 
 -- --------------------------------------------------------
 
@@ -79,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `catalogue` (
   `image` varchar(50) NOT NULL,
   `description` varchar(50) NOT NULL,
   PRIMARY KEY (`refproduit`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `catalogue`
@@ -87,7 +94,10 @@ CREATE TABLE IF NOT EXISTS `catalogue` (
 
 INSERT INTO `catalogue` (`refproduit`, `libelle`, `image`, `description`) VALUES
 (1, 'NIKE', 'demos/03_client.png', 'This is an example service page. It’s different fr'),
-(2, 'ADIDAS', 'demos/03_client.png', 'This is an example service page. It’s different fr');
+(2, 'ADIDAS', 'demos/03_client.png', 'This is an example service page. It’s different fr'),
+(3, 'egzegzegzeg', 'bg1.jpg', 'azdazfazf'),
+(4, 'egzegzegzeg', 'bg1.jpg', 'azdazfazf'),
+(6, 'NDM', 'magnifier.png', 'azdazdaesdqv');
 
 -- --------------------------------------------------------
 
@@ -112,23 +122,21 @@ CREATE TABLE IF NOT EXISTS `client` (
 --
 
 CREATE TABLE IF NOT EXISTS `contact` (
-  `id_msg` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(30) NOT NULL,
   `organisme` varchar(30) NOT NULL,
   `tel` varchar(30) NOT NULL,
   `mail` varchar(30) NOT NULL,
   `sujet` varchar(30) NOT NULL,
   `msg` varchar(500) NOT NULL,
-  PRIMARY KEY (`id_msg`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `contact`
 --
 
-INSERT INTO `contact` (`id_msg`, `nom`, `organisme`, `tel`, `mail`, `sujet`, `msg`) VALUES
-(1, '', '', '', 'ndm.khammeri@gmail.com', '', ''),
-(2, '', '', '', 'azdjl@azdlkn.com', '', ''),
+INSERT INTO `contact` (`id`, `nom`, `organisme`, `tel`, `mail`, `sujet`, `msg`) VALUES
 (3, 'NAdhem', 'ENICARTHAGE', '200017746165498', 'lkasjb@azpdibh.azckn', 'TEST Verification', 'az;\r\ndhamuzdjahdaKzj az4da\r\nzdjÃ®azdÃ¹kna!lkamh Ã®a \r\na bÃ¹k \r\nazodÃ¢zmdjaÃ¹k,daz\r\n\r\n'),
 (4, 'rawjh', 'amejgaef', 'lhabezfazb ', 'amjba!ljfbvlazg', 'jblajbfaf', 'jzbefmkjekfbamzkefnazljbfmaznfmazf');
 
@@ -156,21 +164,23 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `refproduit` int(20) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(30) NOT NULL,
   `quantite` int(11) NOT NULL,
-  `prixachat` int(11) NOT NULL,
+  `description` varchar(300) NOT NULL,
   `prixvente` int(11) NOT NULL,
   `image` varchar(30) NOT NULL,
   `sale` int(11) NOT NULL,
+  `refmagasin` int(10) NOT NULL,
   PRIMARY KEY (`refproduit`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `produit`
 --
 
-INSERT INTO `produit` (`refproduit`, `libelle`, `quantite`, `prixachat`, `prixvente`, `image`, `sale`) VALUES
-(1, 'Diamond Perfume', 5, 10, 21, 'demos/02_store.jpg', 12),
-(2, 'Diamond Perfume', 5, 10, 21, 'demos/02_store.jpg', 0),
-(3, 'Produit 3', 5, 10, 21, 'demos/02_store.jpg', 20);
+INSERT INTO `produit` (`refproduit`, `libelle`, `quantite`, `description`, `prixvente`, `image`, `sale`, `refmagasin`) VALUES
+(1, 'Diamond Perfume', 5, '10', 21, 'demos/02_store.jpg', 12, 1),
+(2, 'Black Diamond', 5, '10', 21, 'logo.png', 0, 2),
+(3, 'Produit 3', 5, '10', 21, 'demos/02_store.jpg', 20, 1),
+(5, 'BlackEnd', 5, 'azdazdaz', 0, 'icon-quote.png', 12, 6);
 
 -- --------------------------------------------------------
 
